@@ -1,0 +1,64 @@
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 368, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 240, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 247, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 106, in get_callable
+    mod = import_module(mod_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/braulio/protoboard_local/protoboard/activitytree/views.py", line 51, in <module>
+    from activitytree.interaction_handler import SimpleSequencing
+  File "/Users/braulio/protoboard_local/protoboard/activitytree/interaction_handler.py", line 9, in <module>
+    import pytz
+ImportError: No module named pytz
+Not Found: /favicon.ico
+Internal Server Error: /execute_queue
+Traceback (most recent call last):
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/braulio/protoboard_local/protoboard/activitytree/views.py", line 979, in execute_queue
+    task_id = server.enqueue(**task)
+  File "/Users/braulio/protoboard_local/protoboard/eval_code/RedisCola.py", line 75, in enqueue
+    kwargs['id'] = "%s:task:%s" % (self.app_name, r.incr(self.task_counter))
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/redis/client.py", line 898, in incr
+    return self.execute_command('INCRBY', name, amount)
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection.send_command(*args)
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/redis/connection.py", line 556, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/redis/connection.py", line 532, in send_packed_command
+    self.connect()
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/redis/connection.py", line 436, in connect
+    raise ConnectionError(self._error_message(e))
+ConnectionError: Error 64 connecting to 192.168.33.11:6666. Host is down.
+Internal Server Error: /execute_queue
+Traceback (most recent call last):
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/braulio/protoboard_local/protoboard/activitytree/views.py", line 979, in execute_queue
+    task_id = server.enqueue(**task)
+  File "/Users/braulio/protoboard_local/protoboard/eval_code/RedisCola.py", line 75, in enqueue
+    kwargs['id'] = "%s:task:%s" % (self.app_name, r.incr(self.task_counter))
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/redis/client.py", line 898, in incr
+    return self.execute_command('INCRBY', name, amount)
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/redis/client.py", line 570, in execute_command
+    connection.send_command(*args)
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/redis/connection.py", line 556, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/redis/connection.py", line 532, in send_packed_command
+    self.connect()
+  File "/Users/braulio/protoboard_local/lib/python2.7/site-packages/redis/connection.py", line 436, in connect
+    raise ConnectionError(self._error_message(e))
+ConnectionError: Error 60 connecting to 192.168.33.11:6666. Operation timed out.
