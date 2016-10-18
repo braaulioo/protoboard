@@ -72,6 +72,13 @@ def welcome(request):
                                   context_instance=RequestContext(request))
 
 
+
+def test_activity(request):
+    pass
+
+
+
+
 def course_list(request):
     courses = Course.objects.all()
 

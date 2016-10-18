@@ -14,6 +14,9 @@ urlpatterns = patterns('',
       (r'^$','activitytree.views.welcome'),
 
       (r'^welcome/$','activitytree.views.welcome'),
+      (r'^test_activity/$','activitytree.views.test_activity'),
+
+
       (r'^instructor/$', 'activitytree.views.instructor'),
       (r'^student/$', 'activitytree.views.my_enrolled_courses'),
       (r'^courses/$', 'activitytree.views.course_list'),
