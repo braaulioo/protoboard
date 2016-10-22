@@ -74,7 +74,18 @@ def welcome(request):
 
 
 def test_activity(request):
-    pass
+    ULA_Inf = ULA_Event.objects.select_related('ULA__learning_activity').filter(ULA__userlearningactivity__id=8) 
+    
+
+
+    test_info=UserLearningActivity.objects.select_related('user').all().exclude(num_attempts = 0).order_by("user")
+
+    return render_to_response('activitytree/test_activity.html',
+                                  {
+                                   'json': json,
+                                   'ULA_Inf': ULA_Inf,
+                                   },
+                                  context_instance=RequestContext(request))
 
 
 

@@ -5,6 +5,29 @@
 {% block content %}
 
 
+<div class="row">
+<table class="table">
+<tr>
+    <th>Id Actividad</th>
+    <th>Nombre</th>
+    <th>Estado</th>
+    <th>Veces intentado</th>
+  </tr>
+
+{% for test in ULA_Inf %}
+<tr>
+    <td>{{ test.user }} </td> 
+	<td>{{ test }}	 </td> 
+	<td>{{ test.progress_status }} </td> 
+	<td>{{ test.num_attempts }}	 </td> 
+  
+</tr>
+{% endfor %}
+
+</table>
+
+
+</div>
 
 {% endblock content %}
 
