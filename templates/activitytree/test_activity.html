@@ -8,13 +8,13 @@
 <div class="row">
 <table class="table">
 <tr>
-    <th>Id Actividad</th>
+    <th>Usuario</th>
     <th>Nombre</th>
     <th>Estado</th>
     <th>Veces intentado</th>
   </tr>
 
-{% for test in ULA_Inf %}
+{% for test in test_info %}
 <tr>
     <td>{{ test.user }} </td> 
 	<td>{{ test }}	 </td> 
@@ -25,6 +25,11 @@
 {% endfor %}
 
 </table>
+
+{% for u in ULA_inf %}
+	{{u.id}}
+{% endfor %}
+
 
 
 </div>

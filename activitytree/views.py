@@ -74,16 +74,27 @@ def welcome(request):
 
 
 def test_activity(request):
-    ULA_Inf = ULA_Event.objects.select_related('ULA__learning_activity').filter(ULA__userlearningactivity__id=8) 
-    
 
+  #__isnull=True
+    #filter(user_id=request.user.id).exclude(num_attempts = 0)
 
+    #test_info=UserLearningActivity.objects.all().exclude(num_attempts = 0).order_by("user")
+
+    #courses = Course.objects.filter(root__userlearningactivity__user=request.user) 
+
+    #courses = ULA_Event.objects.filter(ULA__userlearningactivity__id=8)  
+    #courses = UserLearningActivity.objects.filter(ULA_id=8).values('id', 'context__ula_event') 
+    #ULA_Inf = ULA_Event.objects.select_related('ULA__learning_activity').filter(ULA__userlearningactivity__id=8) 
     test_info=UserLearningActivity.objects.select_related('user').all().exclude(num_attempts = 0).order_by("user")
+    ULA_inf = UserLearningActivity.objects.filter(user_id=request.user.id)  
+
+    #ULA_inf = ULA_Event.objects.filter(ULA_id=8)  
+
 
     return render_to_response('activitytree/test_activity.html',
-                                  {
-                                   'json': json,
-                                   'ULA_Inf': ULA_Inf,
+                                  {'test_info': test_info,
+                                  'ULA_inf': ULA_inf,
+                                   
                                    },
                                   context_instance=RequestContext(request))
 
